@@ -24,18 +24,18 @@
           <img src="images/logo.svg" alt="company's logo" />
         </a>
         <ul class="nav-bar--list">
-          <li><a class="nav-bar--link" href="#">Home</a></li>
-          <li><a class="nav-bar--link" href="#">Services</a></li>
-          <li><a class="nav-bar--link" href="#">Portfolio</a></li>
-          <li><a class="nav-bar--link" href="#">Pricing</a></li>
-          <li><a class="nav-bar--link" href="#">Team</a></li>
-          <li><a class="nav-bar--link" href="#">Contact</a></li>
+          <li><a class="nav-bar--link" href="#home">Home</a></li>
+          <li><a class="nav-bar--link" href="#services">Services</a></li>
+          <li><a class="nav-bar--link" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-bar--link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-bar--link" href="#team">Team</a></li>
+          <li><a class="nav-bar--link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
 
     <main class="main">
-      <section class="section-hero">
+      <section id="home" class="section-hero">
         <div class="container hero">
           <div class="hero-text-box">
             <h1 class="hero-heading">
@@ -470,7 +470,7 @@
         </div>
       </section>
 
-      <section class="section-services">
+      <section id="services" class="section-services">
         <div class="container services">
           <div class="section-header">
             <h2 class="heading">Services</h2>
@@ -549,12 +549,12 @@
               src="images/video.png"
               alt="a frame from the promo video"
             />
-            <i class="ph ph-play play-btn"></i>
+            <i class="ph ph-play play-btn play-video"></i>
           </div>
         </div>
       </section>
 
-      <section class="section-portfolio">
+      <section id="portfolio" class="section-portfolio">
         <div class="container portfolio">
           <div class="section-header">
             <h2 class="heading">Services</h2>
@@ -722,7 +722,7 @@
         </div>
       </section>
 
-      <section class="section-pricing">
+      <section id="pricing" class="section-pricing">
         <div class="container pricing">
           <div class="section-header">
             <h2 class="heading">Pricing</h2>
@@ -827,7 +827,7 @@
         </div>
       </section>
 
-      <section class="section-team">
+      <section id="team" class="section-team">
         <div class="container team">
           <div class="section-header">
             <h2 class="heading">Our Team</h2>
@@ -1051,7 +1051,7 @@
         </div>
       </section>
 
-      <section class="section-contact">
+      <section id="contact" class="section-contact">
         <div class="container contact">
           <div class="contact-info">
             <div class="contact-method">
@@ -1168,5 +1168,19 @@
         </div>
       </div>
     </footer>
+
+    <div class="video-container">
+      <div class="overlay"></div>
+      <iframe
+        class="video-content"
+        width="1120"
+        height="630"
+        src=""
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
   </body>
 </html>

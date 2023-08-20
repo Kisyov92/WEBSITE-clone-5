@@ -171,3 +171,60 @@ blogArticles.forEach((article) => {
     authorImg.classList.remove("active-author-img");
   });
 });
+
+// smooth scroll nav-bar
+
+const navLinkEls = document.querySelectorAll(".nav-bar--link");
+
+navLinkEls.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const id = link.getAttribute("href");
+    const section = document.querySelector(id);
+    section.scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+// navbar highlight
+
+const navSections = document.querySelectorAll("section[id]");
+
+const obs = new IntersectionObserver(function (entries) {
+  const [ent] = entries;
+  navLinkEls.forEach((link) => link.classList.remove("active-link"));
+  if (!ent.isIntersecting) return;
+  const activeSectionID = ent.target.getAttribute("id");
+  const link = document.querySelector(`[href='#${activeSectionID}']`);
+  link.classList.add("active-link");
+});
+
+navSections.forEach((section) => {
+  obs.observe(section);
+});
+
+// video
+
+const videoPlayBtnEls = document.querySelectorAll(".play-video");
+const videoContainer = document.querySelector(".video-container");
+const video = document.querySelector(".video-content");
+const overlay = document.querySelector(".overlay");
+
+videoPlayBtnEls.forEach((playBtn) => {
+  playBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    videoContainer.style.display = "block";
+    video.src = `https://www.youtube.com/embed/6KefznccsY0?&autoplay=1`;
+  });
+});
+
+const removeVideo = () => {
+  video.src = "";
+  videoContainer.style.display = "none";
+};
+
+overlay.addEventListener("click", removeVideo);
+
+window.addEventListener("keydown", function (e) {
+  if (e.key !== "Escape") return;
+  removeVideo();
+});
